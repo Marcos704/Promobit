@@ -51,4 +51,13 @@ Banco de dados:
 1. CPF de teste: 500.376.342-59
 2. Senha : swu@660031
 ```
+## Prints do sistema
+<h4>Login</h4>
+<img src="https://i.ibb.co/1njccrT/login-promobit.png">
+<h4>Dashboard</h4>
+<img src="https://i.ibb.co/hYygYFY/dashboard-promobit.png">
+<h4>Listar Produtos</h4>
+<img src="https://i.ibb.co/w0h9n8T/produtos-promobit.png">
+<h4>Cadastrar Produto</h4>
+<img src="https://i.ibb.co/861ZF1Z/cadastro-promobit.png">
 
