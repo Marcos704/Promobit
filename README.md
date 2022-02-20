@@ -43,6 +43,42 @@ Windows:
 2. Baixe a última versão da base de dados no github;
 3. Tenha a última versão do servidor local Xampp instalada;
 ```
+## 📟 Criação do banco de dados
+Para realizar os testes de sessão no < FizCardSystem >, siga estas etapas:
+
+Banco de dados - SCRIPT:
+```
+### DATABASE NAME: promobit
+### Username: suport
+### password: swu@660031
+CREATE TABLE `product` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name_UNIQUE` (`name`)
+);
+CREATE TABLE `tag` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name_UNIQUE` (`name`)
+);
+CREATE TABLE `product_tag` (
+   `product_id` int NOT NULL,
+   `tag_id` int NOT NULL,
+   PRIMARY KEY (`product_id`,`tag_id`),
+   CONSTRAINT `product_id` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`),
+   CONSTRAINT `tag_id` FOREIGN KEY (`tag_id`) REFERENCES `tag` (`id`)
+);
+CREATE TABLE `users` (
+    `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `fisrtname` VARCHAR (255) NOT NULL,
+    `lastname` VARCHAR (255) NOT NULL,
+    `password` VARCHAR (255) NOT NULL,
+    `cpf` VARCHAR (255) NOT NULL,
+    `status` TINYINT NOT NULL
+)
+```
 ## 📟 Realizando os testes
 Para realizar os testes de sessão no < FizCardSystem >, siga estas etapas:
 
