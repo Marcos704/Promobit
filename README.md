@@ -47,6 +47,8 @@ Windows:
 Para realizar os testes de sessão no < FizCardSystem >, siga estas etapas:
 
 Banco de dados - SCRIPT:
+
+-- Script para criação do banco de dados do sistema.
 ```
 ### DATABASE NAME: promobit
 ### Username: suport
@@ -64,9 +66,10 @@ CREATE TABLE `tag` (
   UNIQUE KEY `name_UNIQUE` (`name`)
 );
 CREATE TABLE `product_tag` (
+   `id` int NOT NUL AUTO_INCREMENT,
    `product_id` int NOT NULL,
    `tag_id` int NOT NULL,
-   PRIMARY KEY (`product_id`,`tag_id`),
+   PRIMARY KEY (`id`),
    CONSTRAINT `product_id` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`),
    CONSTRAINT `tag_id` FOREIGN KEY (`tag_id`) REFERENCES `tag` (`id`)
 );

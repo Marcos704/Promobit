@@ -26,11 +26,11 @@ $("#pesquisar-tags-produtos").submit(function () {
             .addClass('alert alert-danger')
             .html('<strong>Erro!</strong><br><strong>A tag já está na base de dados! </strong>');
 
-        } else {
+        }else if(retorno.trim() == 'nenhumaTagEncontrada'){
           $('#retornoMsn')
-            .addClass('alert alert-danger')
-            .html('<strong>Não foi possivel enviar as informações</strong><br><strong>Status.: </strong>' + retorno);
-
+          .addClass('alert alert-danger')
+          .html('<strong>Produto sem Tags Cadastradas<br> ⚙Redirecionando...</strong>');
+        window.location = "http://192.168.1.200:8888/Promobit/Suporte/cadastrarTagProduto";
         }
     },
     error: function (retorno) {

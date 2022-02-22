@@ -22,12 +22,30 @@ class GenericModel extends Model
     }
     public function obterTagsProdutoId($product_id)
     {
-        $sql = "SELECT tag.id, tag.name FROM tag INNER JOIN product_tag ON product_tag.tag_id = tag.id
-                AND product_tag.product_id =:id";
+        $sql = "SELECT tag.id, tag.name
+                FROM product JOIN product_tag 
+                ON product.id = product_tag.product_id 
+                JOIN tag ON product_tag.tag_id = tag.id 
+                WHERE product.id =:id";
+
         $query          = $this->db->prepare($sql);
         $query->bindParam(':id', $product_id);
         $query->execute();
         return $query->fetchAll(\PDO::FETCH_ASSOC);
+    }
+    public function obterTotalTagsProdutoId($product_id)
+    {
+        $sql = "SELECT COUNT(tag.id)
+                FROM product JOIN product_tag 
+                ON product.id = product_tag.product_id 
+                JOIN tag ON product_tag.tag_id = tag.id 
+                WHERE product.id =:id";
+
+        $query          = $this->db->prepare($sql);
+        $query->bindParam(':id', $product_id);
+        $query->execute();
+        $total = $query->fetchAll(\PDO::FETCH_ASSOC);
+        return $total;
     }
     public function salvarProdutoTag($id_Produto, $id_Tag)
     {

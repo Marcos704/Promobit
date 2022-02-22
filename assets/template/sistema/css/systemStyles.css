@@ -1,9 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@700&family=Roboto&display=swap');
-:root {
-
-    
+:root {  
   --cor1: #8880FE;
   --cor2: #6C63FF;
   --cor3: rgb(166, 166, 166);

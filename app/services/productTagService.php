@@ -23,15 +23,23 @@ class ProductTagService extends Controller
     $this->model = new GenericModel();
     return $this->model->obterTagsProdutoId($product_id);
   }
+  public function callObterTotalTagsProdutoId($product_id)
+  {
+    $this->model = new GenericModel();
+    return $this->model->obterTotalTagsProdutoId($product_id);
+  }
   public function callObterTagsProdutoIdRequisicao($product_id)
   {
     @session_start();
     $this->serviceProduto = new ProdutoService();
     @$_SESSION['data'] = $product_id['produto_id'];
     @$_SESSION['nameProduto'] =  $this->serviceProduto->getNameProduct($product_id['produto_id']);
-    if (count($this->callObterTagsProdutoId($product_id['produto_id'])) > 0) {
+    if (count($this->callObterTotalTagsProdutoId($product_id['produto_id'])) > 0) {
       echo 'requisicaoCompleta';
-    } else {
+    }else if(count($this->callObterTotalTagsProdutoId($product_id['produto_id'])) == 0){
+      echo 'nenhumaTagEncontrada';
+    }
+     else {
       echo 'RequisicaoIncompleta';
     }
   }
@@ -42,6 +50,7 @@ class ProductTagService extends Controller
       echo 'requisicaoCompleta';
     } else {
       echo 'RequisicaoIncompleta';
+      exit;
     }
   }
 }
