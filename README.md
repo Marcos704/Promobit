@@ -66,7 +66,7 @@ CREATE TABLE `tag` (
   UNIQUE KEY `name_UNIQUE` (`name`)
 );
 CREATE TABLE `product_tag` (
-   `id` int NOT NUL AUTO_INCREMENT,
+   `id` int NOT NULL AUTO_INCREMENT,
    `product_id` int NOT NULL,
    `tag_id` int NOT NULL,
    PRIMARY KEY (`id`),
@@ -75,7 +75,7 @@ CREATE TABLE `product_tag` (
 );
 CREATE TABLE `users` (
     `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    `fisrtname` VARCHAR (255) NOT NULL,
+    `firstname` VARCHAR (255) NOT NULL,
     `lastname` VARCHAR (255) NOT NULL,
     `password` VARCHAR (255) NOT NULL,
     `cpf` VARCHAR (255) NOT NULL,
