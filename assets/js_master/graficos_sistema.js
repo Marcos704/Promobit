@@ -142,7 +142,8 @@ var barGraph5 = new Chart(ctx5, {
 
 function totalUsuarios() {
   $.ajax({
-    url: "http://192.168.1.200:8888/Promobit/Suporte/totalUsuariosCadastrados",
+    //url: "http://192.168.1.200:8888/Promobit/Suporte/totalUsuariosCadastrados",
+    url: "http://localhost/Promobit/Suporte/totalUsuariosCadastrados",
     success: function (resultado) {
       $("#totalUsuariosCadastrados").html(resultado);
       //$("#test").toggleClass("ocultar-componente");
@@ -154,7 +155,8 @@ function totalUsuarios() {
 }
 function totalProdutos() {
   $.ajax({
-    url: "http://192.168.1.200:8888/Promobit/Suporte/totalProdutosCadastrados",
+    //url: "http://192.168.1.200:8888/Promobit/Suporte/totalProdutosCadastrados",
+    url: "http://localhost/Promobit/Suporte/totalProdutosCadastrados",
     success: function (resultado) {
       $("#totalProdutosCadastrados").html(resultado);
       //$("#test").toggleClass("ocultar-componente");
@@ -166,7 +168,8 @@ function totalProdutos() {
 }
 function totalTags() {
   $.ajax({
-    url: "http://192.168.1.200:8888/Promobit/Suporte/totalTagsCadastradas",
+    //url: "http://192.168.1.200:8888/Promobit/Suporte/totalTagsCadastradas",
+    url: "http://localhost/Promobit/Suporte/totalTagsCadastradas",
     success: function (resultado) {
       $("#totalTagsCadastradas").html(resultado);
       //$("#test").toggleClass("ocultar-componente");
@@ -178,7 +181,8 @@ function totalTags() {
 }
 function totalTables() {
   $.ajax({
-    url: "http://192.168.1.200:8888/Promobit/Suporte/totalTBCadastradas",
+    //url: "http://192.168.1.200:8888/Promobit/Suporte/totalTBCadastradas",
+    url: "http://localhost/Promobit/Suporte/totalTBCadastradas",
     success: function (resultado) {
       $("#totalTablesCadastradas").html(resultado);
       //$("#test").toggleClass("ocultar-componente");

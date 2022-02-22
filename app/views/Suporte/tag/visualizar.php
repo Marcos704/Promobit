@@ -11,7 +11,7 @@ $data = $model->callBackTagsCadastrados();
     <div class="card-body">
       <div class="row">
         <div class="col-12 text-center">
-          <h1 class="title">Visualizar Produtos Cadastrados</h1>
+          <h1 class="title">Visualizar Tags Cadastrados</h1>
           <div id="retornoMsn"></div>
           <hr>
         </div>
@@ -44,8 +44,11 @@ $data = $model->callBackTagsCadastrados();
                             <td><?php echo $id ?></td>
                             <td><?php echo $name ?></td>
                             <td>
-                              <a title="Editar" href="<?php echo URL_BASE . "Suporte/edicaoDadosRapidaTags?data=" . $id ?>">
-                               <i class="fa fa-pencil"></i>Editar
+                              <a class="link-primary" title="Editar" href="<?php echo URL_BASE . "Suporte/edicaoDadosRapidaTags?data=" . $id ?>">
+                                <i class="fa fa-pencil"></i>Editar |
+                                <a type="button" title="Excluir" class="link-danger" href="<?php echo URL_BASE . "Suporte/exclusaoTags?data=" . $id ?>">
+                                  <i class="fa fa-trash"></i>Excluir
+                                </a>
                               </a>
                             </td>
                           </tr>

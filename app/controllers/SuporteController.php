@@ -57,6 +57,11 @@ class SuporteController extends Controller
         $dados["view"] = "Suporte/tag/visualizar";
         $this->load(TEMPLATE_SISTEMA, $dados);
     }
+    public function gerarRelatorio()
+    {
+        $dados["view"] = "Suporte/relatorio/gerarRelatorio";
+        $this->load(TEMPLATE_SISTEMA, $dados);
+    }
     public function totalUsuariosCadastrados()
     {
         $this->dbService = new DatabaseService();
@@ -81,6 +86,16 @@ class SuporteController extends Controller
     {
         $this->serviceProduto = new ProdutoService();
         $this->serviceProduto->callBackEditarProduto($_GET['data']);
+    }
+    public function exclusaoProdutos()
+    {
+        $this->serviceProduto = new ProdutoService();
+        $this->serviceProduto->callExcluirProduto($_GET['data']);
+    }
+    public function exclusaoTags()
+    {
+        $this->serviceTag = new TagService();
+        $this->serviceTag->callExcluirProduto($_GET['data']);
     }
     public function edicaoDadosRapidaTags()
     {

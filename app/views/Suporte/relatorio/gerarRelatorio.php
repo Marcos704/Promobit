@@ -10,7 +10,7 @@ $data = $responser->getTagName(@$_SESSION['id']);
     <div class="card-body">
       <div class="row">
         <div class="col-12 text-center">
-          <h1 class="title">Edição de Tag</h1>
+          <h1 class="title">Gerar Relatório Analitico</h1>
           <div class="text-danger" id="retornoMsn">*Preencha os Campos</div>
         </div>
       </div>

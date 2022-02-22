@@ -6,7 +6,8 @@ $("#editar-produto").submit(function() {
   var formData = new FormData(this);
 
   $.ajax({
-    url: "http://192.168.1.200:8888/Promobit/Suporte/editarProduto",
+    //url: "http://192.168.1.200:8888/Promobit/Suporte/editarProduto",
+    url: "http://localhost/Promobit/Suporte/editarProduto",
     type: 'POST',
     data: formData,
 

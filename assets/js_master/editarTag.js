@@ -6,7 +6,8 @@ $("#cadastrar-tag").submit(function() {
   var formData = new FormData(this);
 
   $.ajax({
-    url: "http://192.168.1.200:8888/Promobit/Suporte/editarTag",
+    //url: "http://192.168.1.200:8888/Promobit/Suporte/editarTag",
+    url: "http://localhost/Promobit/Suporte/editarTag",
     type: 'POST',
     data: formData,
 

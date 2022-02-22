@@ -10,7 +10,8 @@ $("#pesquisar-tags-produtos").submit(function () {
   var formData = new FormData(this);
 
   $.ajax({
-    url: "http://192.168.1.200:8888/Promobit/Suporte/pesquisarTagsProduto",
+    //url: "http://192.168.1.200:8888/Promobit/Suporte/pesquisarTagsProduto",
+    url: "http://localhost/Promobit/Suporte/pesquisarTagsProduto",
     type: 'POST',
     data: formData,
 
@@ -19,7 +20,8 @@ $("#pesquisar-tags-produtos").submit(function () {
         $('#retornoMsn')
           .addClass('alert alert-success')
           .html('<strong>Informações Enviadas!<br> ⚙Redirecionando...</strong>');
-        window.location = "http://192.168.1.200:8888/Promobit/Suporte/cadastrarTagProduto";
+        //window.location = "http://192.168.1.200:8888/Promobit/Suporte/cadastrarTagProduto";
+        window.location = "http://localhost/Promobit/Suporte/cadastrarTagProduto";
       } else
         if (retorno.trim() == 'duplicidade') {
           $('#retornoMsn')
@@ -30,7 +32,8 @@ $("#pesquisar-tags-produtos").submit(function () {
           $('#retornoMsn')
           .addClass('alert alert-danger')
           .html('<strong>Produto sem Tags Cadastradas<br> ⚙Redirecionando...</strong>');
-        window.location = "http://192.168.1.200:8888/Promobit/Suporte/cadastrarTagProduto";
+        //window.location = "http://192.168.1.200:8888/Promobit/Suporte/cadastrarTagProduto";
+        window.location = "http://localhost/Promobit/Suporte/cadastrarTagProduto";
         }
     },
     error: function (retorno) {

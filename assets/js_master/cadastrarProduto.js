@@ -6,7 +6,8 @@
    var formData = new FormData(this);
 
    $.ajax({
-     url: "http://192.168.1.200:8888/Promobit/Suporte/salvarNovoProduto",
+     //url: "http://192.168.1.200:8888/Promobit/Suporte/salvarNovoProduto",
+     url: "http://localhost/Promobit/Suporte/salvarNovoProduto",
      type: 'POST',
      data: formData,
 

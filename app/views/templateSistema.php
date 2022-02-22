@@ -65,9 +65,7 @@ $responser = new Util();
                             <i class="fas fa-print"></i> Relatórios
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Cadastrar</a></li>
-                            <li><a class="dropdown-item" href="#">Visualizar</a></li>
-                            <li><a class="dropdown-item" href="#">Editar</a></li>
+                            <li><a class="dropdown-item" href="<?php echo URL_BASE . "Suporte/gerarRelatorio" ?>">Gerar Relatório</a></li>
                         </ul>
                     </li>
                 </ul>

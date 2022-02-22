@@ -93,6 +93,19 @@ class TagModel extends Model
         }
         return false;
     }
+    public function exclusaoTagId($id)
+    {
+
+        $sql = "DELETE  tag FROM tag WHERE id =:id";
+
+        $query = $this->db->prepare($sql);
+
+        $query->bindValue(":id",   $id);
+        if ($query->execute()) {
+            return true;
+        }
+        return false;
+    }
     public function getTotalTags()
     {
         $sql            = "SELECT COUNT(id) AS total_tags FROM tag";

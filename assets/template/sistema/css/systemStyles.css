@@ -13,6 +13,7 @@
   --cor9: #5c70bbc0;
   --cor10: #008AE1;
   --cor11: #054f7c;
+  --cor12: #bd1c1c;
 }
 
 *{
@@ -25,6 +26,14 @@ body {
 }
 hr{
   background: var(--cor1)
+}
+.link-primary{
+  text-decoration: none;
+  color: var(--cor10);
+}
+.link-danger{
+  text-decoration: none;
+  color: var(--cor12);
 }
 footer.sticky-footer {
   padding: 2rem 0;
@@ -159,7 +168,10 @@ option{
   border: none;
   color: var(--cor7);
 }
-
+.space{
+  margin-left: 2px;
+  margin-right: 2px;
+}
 .custom-input:hover {
   background-color: var(--cor8);
   border: none;

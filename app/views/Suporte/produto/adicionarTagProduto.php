@@ -26,15 +26,19 @@ $data = $model->callBackProdutosCadastrados();
                 <div class="text-center">
                   <select name="produto_id" id="produto_id">
                     <?php
+                    if(count($data) == 0){
+                      ?>
+                      <option value="null" disabled>-- Sem registros --</option>
+                      <?php
+                    }else{
                     for ($i = 0; $i < count($data); $i++) {
                       foreach ($data[$i] as $key => $value) {
                       }
                       $id = $data[$i]['id'];
                       $name = $data[$i]['name'];
-
                     ?>
                       <option value="<?php echo $id ?>"><?php echo $name ?></option>
-                    <?php } ?>
+                    <?php } } ?>
                   </select>
                 </div>
               </div>

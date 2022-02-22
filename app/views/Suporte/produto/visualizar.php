@@ -45,8 +45,11 @@ $data = $model->callBackProdutosCadastrados();
                             <td><?php echo $id ?></td>
                             <td><?php echo $name ?></td>
                             <td>
-                              <a title="Editar" href="<?php echo URL_BASE . "Suporte/edicaoDadosRapidaProdutos?data=" . $id ?>">
-                               <i class="fa fa-pencil"></i>Editar
+                              <a class="link-primary" href="<?php echo URL_BASE . "Suporte/edicaoDadosRapidaProdutos?data=" . $id ?>" title="Editar">
+                                <i class="fa fa-pencil"></i>Editar
+                              </a> |
+                              <a type="button" title="Excluir" class="link-danger" href="<?php echo URL_BASE . "Suporte/exclusaoProdutos?data=" . $id ?>">
+                                <i class="fa fa-trash"></i>Excluir
                               </a>
                             </td>
                           </tr>

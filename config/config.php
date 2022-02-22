@@ -12,6 +12,8 @@ define('CONTROLLER_PADRAO', 'home');
 define('METODO_PADRAO', 'index');
 define('NAMESPACE_CONTROLLER', 'app\\controllers\\');
 
+//define('URL_BASE', 'http://192.168.1.200:8888/Promobit/');
+//define('URL_BASE_ROTAS', 'http://192.168.1.200:8888/Promobit/app/views/');
 define('URL_BASE', 'http://localhost/Promobit/');
 define('URL_BASE_ROTAS', 'http://localhost/Promobit/app/views/');
 define('URL_BASE_TEMPLATE_SISTEMA','../../../../Promobit/');

@@ -121,12 +121,18 @@ class CustomAlerts
         ";
         header("Location:" . $rotaExibicao);
     }
-    public function inforAlert($msnInformacao)
+    public function inforAlert($msnInformacao, $rota)
     {
-        echo "<script>
+        if ($rota == null) {
+            echo "<script>
                 window.alert('$msnInformacao');
             </script>";
-        header("Location:javascript://history.go(-1)");
+            header("Location:javascript://history.go(-1)");
+        } else {
+            echo "<script>
+                window.alert('$msnInformacao');
+                </script>";
+        }
     }
 
     public function confirmAlert($msnPergunta, $msnConfirmacao, $rota)

@@ -3,13 +3,17 @@
 namespace app\services;
 
 use app\core\Controller;
+use app\models\GenericModel;
 use app\models\ProductModel;
 use app\models\TagModel;
+use app\functions\CustomAlerts;
 
 class ProdutoService extends Controller
 {
-  private ProductModel   $productModel;
-  private TagModel   $tagModel;
+  private ProductModel    $productModel;
+  private TagModel        $tagModel;
+  private GenericModel    $genericModel;
+  private CustomAlerts    $customAlert;
 
   public function callBackProdutosCadastrados()
   {
@@ -61,6 +65,20 @@ class ProdutoService extends Controller
       echo 'requisicaoCompleta';
     } else {
       echo 'RequisicaoIncompleta';
+    }
+  }
+  public function callExcluirProduto($varId)
+  {
+    $this->productModel = new ProductModel();
+    $this->genericModel = new GenericModel();
+    $this->customAlert = new CustomAlerts();
+    $this->customAlert->confirmAlert("Aviso importante!","Realmente deseja excluir o item selecionado? A exclusão desse item pode influênciar em outras funcionalidades do sistema.", null);
+    if($this->genericModel->verificarItemTagProduto($varId)>=1){
+      if($this->genericModel->exclusaoTagProdutoId($varId)){
+        if($this->productModel->exclusaoProdutoId($varId)){
+          $this->redirectAfter();
+        }
+      }
     }
   }
   public function getNameProduct($id)

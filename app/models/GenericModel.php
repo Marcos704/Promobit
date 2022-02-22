@@ -47,6 +47,18 @@ class GenericModel extends Model
         $total = $query->fetchAll(\PDO::FETCH_ASSOC);
         return $total;
     }
+    public function verificarItemTagProduto($product_id)
+    {
+        $sql = "SELECT COUNT(product_tag.product_id)
+                FROM product_tag
+                WHERE product_tag.product_id =:id";
+
+        $query          = $this->db->prepare($sql);
+        $query->bindParam(':id', $product_id);
+        $query->execute();
+        $total = $query->fetchAll(\PDO::FETCH_ASSOC);
+        return $total;
+    }
     public function salvarProdutoTag($id_Produto, $id_Tag)
     {
 
@@ -89,5 +101,18 @@ class GenericModel extends Model
         } else {
             return false;
         }
+    }
+    public function exclusaoTagProdutoId($id)
+    {
+
+        $sql = "DELETE product_tag FROM product_tag WHERE product_tag.product_id =:id";
+
+        $query = $this->db->prepare($sql);
+
+        $query->bindValue(":id",   $id);
+        if ($query->execute()) {
+            return true;
+        }
+        return false;
     }
 }

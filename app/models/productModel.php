@@ -53,6 +53,19 @@ class ProductModel extends Model
         }
         return false;
     }
+    public function exclusaoProdutoId($id)
+    {
+
+        $sql = "DELETE  product FROM product WHERE id =:id";
+
+        $query = $this->db->prepare($sql);
+
+        $query->bindValue(":id",   $id);
+        if ($query->execute()) {
+            return true;
+        }
+        return false;
+    }
     public function salvarRegistroNovoProduto($nome)
     {
         if ($this->adicionarNovoProduto($nome)) 
